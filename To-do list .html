@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        input{
+            background-color: rgb(224, 210, 222);
+        }
+        button{
+            background-color: rgb(230, 59, 236);
+        }
+        .container{
+            width: 50%;
+            height: 500px;
+            background-color: rgb(219, 247, 66);
+            border-radius: 40px;
+            border: 5px double rgb(224, 50, 108);
+
+        }
+        .container input {
+            margin-top: 10px;
+            margin-left: 150px;
+        }
+        h1{
+            color: blueviolet;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> To-Do List</h1>
+    <input id="input" >
+    <button onclick="add()">Add</button>
+    <ul id="list-container" >
+    </ul>
+    </div>
+    <script>
+            var ul=document.getElementById("list-container")
+            var input=document.getElementById("input")
+            function add(){
+                var listItem=document.createElement("li")
+                listItem.innerHTML=input.value +"<button onclick='remove(event)'>Delete</button>";
+                  ul.append(listItem)
+            }
+            function remove(event){
+                event.target .parentElement.remove();
+            }
+    </script>
+</body>
+</html>
